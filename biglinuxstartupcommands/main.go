@@ -24,12 +24,23 @@ func logWriter(logMessage string) {
 
 	wd, _ := os.Getwd()
 	logDir := filepath.Join(wd, "logging", "biglinuxstartup.txt")
-	logFile, err := os.OpenFile(logDir, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0777)
+	//Check to see if path exists
+	if _, err := os.Stat(logDir); os.IsNotExist(err) {
+		os.MkdirAll("logging", 0777) // Make the directory
+		//Create file
+		emptyFile, err2 := os.Create("./logging/biglinuxstartup.txt")
+		if err2 != nil {
+			log.Fatal(err2)
+		}
+		emptyFile.Close()
+	}
+
+	logFile, err := os.OpenFile(logDir, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0777)
 
 	defer logFile.Close()
 
 	if err != nil {
-		fmt.Println("Failed opening log file")
+		fmt.Println("Failed opening log file: " + err.Error())
 	}
 
 	log.SetOutput(logFile)
@@ -73,5 +84,5 @@ func executeLinuxCommands() {
 
 	result := "This ran succesffully on " + theTimeNow.Format("2006-01-02 15:04:05")
 	fmt.Println(result)
-
+	logWriter(result)
 }
