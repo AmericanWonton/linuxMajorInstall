@@ -1,0 +1,5 @@
+Note, this should only work if the User in question is given sudo rights
+or if this is run in the root folder of cron
+
+Add User to root: sudo usermod -aG sudo joek
+https://phoenixnap.com/kb/how-to-create-sudo-user-on-ubuntu
