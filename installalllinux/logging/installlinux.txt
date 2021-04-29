@@ -8,3 +8,74 @@
 2021/04/29 11:33:34 This ran succesffully on 2021-04-29 11:33:34
 2021/04/29 11:37:02 We are installing with the following setting: basic
 2021/04/29 11:37:04 This ran succesffully on 2021-04-29 11:37:04
+2021/04/29 14:03:41 We are installing with the following setting: basic
+2021/04/29 14:03:52 Errored during update: exit status 1
+2021/04/29 14:03:52 This ran succesffully on 2021-04-29 14:03:52
+2021/04/29 14:17:32 We are installing with the following setting: basic
+2021/04/29 14:17:32 Errored during the following installation:
+
+exit status 1
+2021/04/29 14:17:32 Errored during the following installation:
+
+exit status 1
+
+2021/04/29 14:17:32 This ran succesffully on 2021-04-29 14:17:32
+2021/04/29 14:23:35 We are installing with the following setting: basic
+2021/04/29 14:23:35 Errored during the following installation:
+
+exit status 1
+2021/04/29 14:23:35 Errored during the following installation:
+
+exit status 1
+
+2021/04/29 14:23:35 This ran succesffully on 2021-04-29 14:23:35
+2021/04/29 14:29:31 We are installing with the following setting: basic
+2021/04/29 14:29:51 Errored during the following installation:
+ snap install leafpad -y
+exit status 64
+2021/04/29 14:29:51 Errored during the following installation:
+ snap install leafpad -y
+exit status 64
+
+2021/04/29 14:29:51 This ran succesffully on 2021-04-29 14:29:51
+2021/04/29 14:31:35 We are installing with the following setting: basic
+2021/04/29 14:32:29 Errored during the following installation:
+ -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" -y
+exit status 126
+2021/04/29 14:32:29 Errored during the following installation:
+ -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" -y
+exit status 126
+
+2021/04/29 14:32:29 This ran succesffully on 2021-04-29 14:32:29
+2021/04/29 14:47:23 We are installing with the following setting: basic
+2021/04/29 14:47:28 Errored during the following installation:
+ -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" -y
+exit status 126
+2021/04/29 14:47:28 Errored during the following installation:
+ -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" -y
+exit status 126
+
+2021/04/29 14:48:58 We are installing with the following setting: basic
+2021/04/29 14:49:05 Errored during the following installation:
+ lfs install -y
+exit status 1
+2021/04/29 14:49:05 Errored during the following installation:
+ lfs install -y
+exit status 1
+
+2021/04/29 14:55:18 We are installing with the following setting: basic
+2021/04/29 14:55:26 Errored during the following installation:
+ curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
+exit status 6
+2021/04/29 14:55:26 Errored during the following installation:
+ curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
+exit status 6
+
+2021/04/29 14:57:28 We are installing with the following setting: basic
+2021/04/29 14:57:41 This ran succesffully on 2021-04-29 14:57:41
+2021/04/29 15:07:07 We are installing with the following setting: basic
+2021/04/29 15:07:19 This ran succesffully on 2021-04-29 15:07:19
+2021/04/29 15:10:34 We are installing with the following setting: bootyhole
+2021/04/29 15:10:34 Error, wrong command line arugment entered: bootyhole
+2021/04/29 15:11:55 We are installing with the following setting: basic
+2021/04/29 15:12:10 This ran succesffully on 2021-04-29 15:12:10

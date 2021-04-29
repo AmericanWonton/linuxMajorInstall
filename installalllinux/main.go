@@ -52,18 +52,25 @@ func logWriter(logMessage string) {
 func main() {
 	if strings.Contains(whatOS, "linux") {
 		//Log what we're doing
-		theArgs := os.Args
-		fmt.Printf("The args is: %v\n", theArgs)
-		if theArgs == nil {
-			fmt.Printf("Error, no argument given to program!\n")
-			return
-		}
-		whatArg = theArgs[1]
-		theRunner := "We are installing with the following setting: " + whatArg
+		/*
+			theArgs := os.Args
+			fmt.Printf("The args is: %v\n", theArgs)
+			if theArgs == nil {
+				fmt.Printf("Error, no argument given to program!\n")
+				return
+			}
+			whatArg = theArgs[1]
+		*/
+		//Take argument from User
+		fmt.Printf("Please enter what install you are performing: ")
+		var whatInstall string
+		fmt.Scanln(&whatInstall)
+		fmt.Println()
+		theRunner := "We are installing with the following setting: " + whatInstall
 		fmt.Println(theRunner)
 		logWriter(theRunner)
 		//Execute linux commands
-		executeLinuxCommands(whatArg)
+		executeLinuxCommands(whatInstall)
 	} else {
 		fmt.Printf("Wrong, you're running this on windows")
 	}
@@ -85,7 +92,21 @@ func executeLinuxCommands(theArg string) {
 		break
 	case "basic":
 		//Basic Linux Setup
+		fmt.Printf("DEBUG: Running basic linux setup\n")
 		fillBasic()
+		goodUpdate, theResult := commandExecute(allPackageCommands)
+		if !goodUpdate {
+			bigResult := ""
+			for j := 0; j < len(theResult); j++ {
+				bigResult = bigResult + theResult[j] + "\n"
+			}
+			logWriter(bigResult)
+		} else {
+			theTimeNow := time.Now()
+			result := "This ran succesffully on " + theTimeNow.Format("2006-01-02 15:04:05")
+			fmt.Println(result)
+			logWriter(result)
+		}
 		break
 	default:
 		//Error, log it
@@ -94,27 +115,32 @@ func executeLinuxCommands(theArg string) {
 		logWriter(theErr)
 		break
 	}
-	//update and upgrade
-	_, err := exec.Command("sudo", "apt-get", "update", "-y").Output()
-	if err != nil {
-		theErr := "Errored during update: " + err.Error()
-		fmt.Println(theErr)
-		logWriter(theErr)
-	}
-	_, err2 := exec.Command("sudo", "apt-get", "upgrade", "-y").Output()
-	if err2 != nil {
-		theErr := "Errored during upgrade: " + err2.Error()
-		fmt.Println(theErr)
-		logWriter(theErr)
-	}
 
-	theTimeNow := time.Now()
-
-	result := "This ran succesffully on " + theTimeNow.Format("2006-01-02 15:04:05")
-	fmt.Println(result)
-	logWriter(result)
 }
 
-func commandExecute() {
+func commandExecute(packgeCommands [][]string) (bool, []string) {
+	goodUpdate, theResult := true, []string{}
 
+	//For length of inserted package commands, run the commands
+	for x := 0; x < len(packgeCommands); x++ {
+		fmt.Printf("DEBUG: Nubmered Roundabout roundabout: %v\n", x)
+		commandFirstWord := packgeCommands[x][0] //Insert first package command into argument
+		restOfCommands := packgeCommands[x][1:]
+		fmt.Printf("DEBUG: restofCommands = %v\n", restOfCommands)
+		_, err := exec.Command(commandFirstWord, restOfCommands...).Output()
+		if err != nil {
+			errorComp := "Errored during the following installation:\n"
+			for z := 0; z < len(restOfCommands); z++ {
+				errorComp = errorComp + " " + restOfCommands[z]
+			}
+			errorComp = errorComp + "\n" + err.Error()
+			fmt.Println(errorComp)
+			logWriter(errorComp)
+			goodUpdate = false
+			theResult = append(theResult, errorComp)
+			break
+		}
+	}
+
+	return goodUpdate, theResult
 }
