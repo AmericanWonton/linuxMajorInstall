@@ -85,7 +85,6 @@ func fillBasic() {
 }
 
 func fillDevMachine() {
-	fillBasic()
 	/* Installing Docker */
 	/* Start at home directory */
 	theCommands = append(theCommands, "cd")
