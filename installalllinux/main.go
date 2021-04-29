@@ -108,6 +108,8 @@ func executeLinuxCommands(theArg string) {
 			logWriter(result)
 		}
 		break
+	case "dev-machine":
+
 	default:
 		//Error, log it
 		theErr := "Error, wrong command line arugment entered: " + theArg
@@ -115,7 +117,6 @@ func executeLinuxCommands(theArg string) {
 		logWriter(theErr)
 		break
 	}
-
 }
 
 func commandExecute(packgeCommands [][]string) (bool, []string) {

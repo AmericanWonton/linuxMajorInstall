@@ -82,6 +82,4 @@ func fillBasic() {
 	theCommands = append(theCommands, "sudo", "gdebi", "GitHubDesktop-linux-2.6.3-linux1.deb")
 	allPackageCommands = append(allPackageCommands, theCommands)
 	theCommands = nil
-
-	//fmt.Printf("All package commands is: %v\n", allPackageCommands)
 }
