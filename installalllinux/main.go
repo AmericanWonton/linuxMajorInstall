@@ -53,6 +53,11 @@ func main() {
 	if strings.Contains(whatOS, "linux") {
 		//Log what we're doing
 		theArgs := os.Args
+		fmt.Printf("The args is: %v\n", theArgs)
+		if theArgs == nil {
+			fmt.Printf("Error, no argument given to program!\n")
+			return
+		}
 		whatArg = theArgs[1]
 		theRunner := "We are installing with the following setting: " + whatArg
 		fmt.Println(theRunner)
@@ -80,13 +85,14 @@ func executeLinuxCommands(theArg string) {
 		break
 	case "basic":
 		//Basic Linux Setup
-
+		fillBasic()
 		break
 	default:
 		//Error, log it
 		theErr := "Error, wrong command line arugment entered: " + theArg
 		fmt.Println(theErr)
 		logWriter(theErr)
+		break
 	}
 	//update and upgrade
 	_, err := exec.Command("sudo", "apt-get", "update", "-y").Output()
@@ -107,4 +113,8 @@ func executeLinuxCommands(theArg string) {
 	result := "This ran succesffully on " + theTimeNow.Format("2006-01-02 15:04:05")
 	fmt.Println(result)
 	logWriter(result)
+}
+
+func commandExecute() {
+
 }
