@@ -18,3 +18,5 @@ dev-machine - installs programs for a dev machine I might be working on,
 Notes: brew really can't be run with this, needs to be ran as a user on the system!
 Also, Git LFS Needs an executable
 git lfs isn't working either...
+
+Might want to run this binary as sudo, just so the program dosen't have to keep asking permission
