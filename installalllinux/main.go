@@ -12,6 +12,7 @@ import (
 )
 
 var whatOS string
+var whatArg string
 
 func init() {
 	//Check to see what OS we are running
@@ -23,12 +24,12 @@ func logWriter(logMessage string) {
 	//Logging info
 
 	wd, _ := os.Getwd()
-	logDir := filepath.Join(wd, "logging", "biglinuxstartup.txt")
+	logDir := filepath.Join(wd, "logging", "installlinux.txt")
 	//Check to see if path exists
 	if _, err := os.Stat(logDir); os.IsNotExist(err) {
 		os.MkdirAll("logging", 0777) // Make the directory
 		//Create file
-		emptyFile, err2 := os.Create("./logging/biglinuxstartup.txt")
+		emptyFile, err2 := os.Create("./logging/installlinux.txt")
 		if err2 != nil {
 			log.Fatal(err2)
 		}
@@ -50,8 +51,14 @@ func logWriter(logMessage string) {
 
 func main() {
 	if strings.Contains(whatOS, "linux") {
+		//Log what we're doing
+		theArgs := os.Args
+		whatArg = theArgs[1]
+		theRunner := "We are installing with the following setting: " + whatArg
+		fmt.Println(theRunner)
+		logWriter(theRunner)
 		//Execute linux commands
-		executeLinuxCommands()
+		executeLinuxCommands(whatArg)
 	} else {
 		fmt.Printf("Wrong, you're running this on windows")
 	}
@@ -65,7 +72,22 @@ func whatIsOS() {
 	}
 }
 
-func executeLinuxCommands() {
+func executeLinuxCommands(theArg string) {
+	switch theArg {
+	case "all":
+		//All Linux setup
+
+		break
+	case "basic":
+		//Basic Linux Setup
+
+		break
+	default:
+		//Error, log it
+		theErr := "Error, wrong command line arugment entered: " + theArg
+		fmt.Println(theErr)
+		logWriter(theErr)
+	}
 	//update and upgrade
 	_, err := exec.Command("sudo", "apt-get", "update", "-y").Output()
 	if err != nil {
