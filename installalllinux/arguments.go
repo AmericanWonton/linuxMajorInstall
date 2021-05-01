@@ -83,3 +83,59 @@ func fillBasic() {
 	allPackageCommands = append(allPackageCommands, theCommands)
 	theCommands = nil
 }
+
+func fillDevMachine() {
+	/* Installing Docker */
+	/* Start at home directory */
+	theCommands = append(theCommands, "cd")
+	allPackageCommands = append(allPackageCommands, theCommands)
+	theCommands = nil
+	theCommands = append(theCommands, "sudo", "apt", "update", "-y")
+	allPackageCommands = append(allPackageCommands, theCommands)
+	theCommands = nil
+	theCommands = append(theCommands, "sudo", "apt", "install", "apt-transport-https", "ca-certificates", "curl", "software-properties-common")
+	allPackageCommands = append(allPackageCommands, theCommands)
+	theCommands = nil
+	theCommands = append(theCommands, "curl", "-fsSL", "https://download.docker.com/linux/ubuntu/gpg",
+		"|", "sudo", "apt-key", "add", "-")
+	allPackageCommands = append(allPackageCommands, theCommands)
+	theCommands = nil
+	theCommands = append(theCommands, "sudo", "add-apt-repository", "\"deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable\"")
+	allPackageCommands = append(allPackageCommands, theCommands)
+	theCommands = nil
+	theCommands = append(theCommands, "sudo", "apt", "update")
+	allPackageCommands = append(allPackageCommands, theCommands)
+	theCommands = nil
+	theCommands = append(theCommands, "apt-cache", "policy", "docker-ce")
+	allPackageCommands = append(allPackageCommands, theCommands)
+	theCommands = nil
+	theCommands = append(theCommands, "sudo", "apt", "install", "docker-ce")
+	allPackageCommands = append(allPackageCommands, theCommands)
+	theCommands = nil
+	/* Have a Docker User created at some point */
+
+	/* Install Golang */
+	/* Start at home directory */
+	theCommands = append(theCommands, "cd")
+	allPackageCommands = append(allPackageCommands, theCommands)
+	theCommands = nil
+	theCommands = append(theCommands, "sudo", "apt", "install", "golang-go", "-y")
+	allPackageCommands = append(allPackageCommands, theCommands)
+	theCommands = nil
+	/* make go working directory */
+	theCommands = append(theCommands, "cd", "go")
+	allPackageCommands = append(allPackageCommands, theCommands)
+	theCommands = nil
+	theCommands = append(theCommands, "mkdir", "pkg")
+	allPackageCommands = append(allPackageCommands, theCommands)
+	theCommands = nil
+	theCommands = append(theCommands, "mkdir", "src")
+	allPackageCommands = append(allPackageCommands, theCommands)
+	theCommands = nil
+	theCommands = append(theCommands, "mkdir", "bin")
+	allPackageCommands = append(allPackageCommands, theCommands)
+	theCommands = nil
+	theCommands = append(theCommands, "cd")
+	allPackageCommands = append(allPackageCommands, theCommands)
+	theCommands = nil
+}

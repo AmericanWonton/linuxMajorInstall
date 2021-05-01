@@ -88,7 +88,8 @@ func executeLinuxCommands(theArg string) {
 	switch theArg {
 	case "all":
 		//All Linux setup
-
+		fillBasic()
+		fillDevMachine()
 		break
 	case "basic":
 		//Basic Linux Setup
@@ -109,7 +110,9 @@ func executeLinuxCommands(theArg string) {
 		}
 		break
 	case "dev-machine":
-
+		fillBasic()
+		fillDevMachine()
+		break
 	default:
 		//Error, log it
 		theErr := "Error, wrong command line arugment entered: " + theArg
