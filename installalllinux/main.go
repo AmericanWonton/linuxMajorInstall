@@ -88,8 +88,22 @@ func executeLinuxCommands(theArg string) {
 	switch theArg {
 	case "all":
 		//All Linux setup
+		fmt.Printf("DEBUG: Installing all on linux\n")
 		fillBasic()
 		fillDevMachine()
+		goodUpdate, theResult := commandExecute(allPackageCommands)
+		if !goodUpdate {
+			bigResult := ""
+			for j := 0; j < len(theResult); j++ {
+				bigResult = bigResult + theResult[j] + "\n"
+			}
+			logWriter(bigResult)
+		} else {
+			theTimeNow := time.Now()
+			result := "This ran succesffully on " + theTimeNow.Format("2006-01-02 15:04:05")
+			fmt.Println(result)
+			logWriter(result)
+		}
 		break
 	case "basic":
 		//Basic Linux Setup
@@ -110,8 +124,22 @@ func executeLinuxCommands(theArg string) {
 		}
 		break
 	case "dev-machine":
+		fmt.Printf("Installing on Dev Machine\n")
 		fillBasic()
 		fillDevMachine()
+		goodUpdate, theResult := commandExecute(allPackageCommands)
+		if !goodUpdate {
+			bigResult := ""
+			for j := 0; j < len(theResult); j++ {
+				bigResult = bigResult + theResult[j] + "\n"
+			}
+			logWriter(bigResult)
+		} else {
+			theTimeNow := time.Now()
+			result := "This ran succesffully on " + theTimeNow.Format("2006-01-02 15:04:05")
+			fmt.Println(result)
+			logWriter(result)
+		}
 		break
 	default:
 		//Error, log it
