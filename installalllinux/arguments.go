@@ -18,6 +18,10 @@ func fillBasic() {
 	theCommands = append(theCommands, "sudo", "apt", "install", "curl", "-y")
 	allPackageCommands = append(allPackageCommands, theCommands)
 	theCommands = nil
+	/* Install Binarturals */
+	theCommands = append(theCommands, "sudo", "apt", "install", "binutils-for-build")
+	allPackageCommands = append(allPackageCommands, theCommands)
+	theCommands = nil
 	/* install leafpad */
 	theCommands = append(theCommands, "sudo", "snap", "install", "leafpad")
 	allPackageCommands = append(allPackageCommands, theCommands)
