@@ -11,11 +11,23 @@ func fillBasic() {
 	theCommands = append(theCommands, "sudo", "apt-get", "upgrade", "-y")
 	allPackageCommands = append(allPackageCommands, theCommands)
 	theCommands = nil
+	/* Install ifconfig; not really needed, but nice to have */
+	theCommands = append(theCommands, "apt-get", "install", "net-tools")
+	allPackageCommands = append(allPackageCommands, theCommands)
+	theCommands = nil
 	/* snapd/ curl */
 	theCommands = append(theCommands, "sudo", "apt", "install", "snapd", "-y")
 	allPackageCommands = append(allPackageCommands, theCommands)
 	theCommands = nil
 	theCommands = append(theCommands, "sudo", "apt", "install", "curl", "-y")
+	allPackageCommands = append(allPackageCommands, theCommands)
+	theCommands = nil
+	/* Install nautilus for network issues */
+	theCommands = append(theCommands, "sudo", "apt-get", "install", "nautilus-admin")
+	allPackageCommands = append(allPackageCommands, theCommands)
+	theCommands = nil
+	/* Install binutils-for-build for network issues */
+	theCommands = append(theCommands, "sudo", "apt", "install", "binutils-for-build")
 	allPackageCommands = append(allPackageCommands, theCommands)
 	theCommands = nil
 	/* install leafpad */
