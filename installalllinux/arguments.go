@@ -11,6 +11,10 @@ func fillBasic() {
 	theCommands = append(theCommands, "sudo", "apt-get", "upgrade", "-y")
 	allPackageCommands = append(allPackageCommands, theCommands)
 	theCommands = nil
+	/* Install ifconfig; not really needed, but nice to have */
+	theCommands = append(theCommands, "apt-get", "install", "net-tools")
+	allPackageCommands = append(allPackageCommands, theCommands)
+	theCommands = nil
 	/* snapd/ curl */
 	theCommands = append(theCommands, "sudo", "apt", "install", "snapd", "-y")
 	allPackageCommands = append(allPackageCommands, theCommands)
