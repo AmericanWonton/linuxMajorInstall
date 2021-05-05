@@ -26,6 +26,10 @@ func fillBasic() {
 	theCommands = append(theCommands, "sudo", "apt", "install", "binutils-for-build")
 	allPackageCommands = append(allPackageCommands, theCommands)
 	theCommands = nil
+	/* Install nautilus-admin */
+	theCommands = append(theCommands, "sudo", "apt-get", "install", "nautilus-admin")
+	allPackageCommands = append(allPackageCommands, theCommands)
+	theCommands = nil
 	/* install leafpad */
 	theCommands = append(theCommands, "sudo", "snap", "install", "leafpad")
 	allPackageCommands = append(allPackageCommands, theCommands)
