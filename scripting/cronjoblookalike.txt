@@ -1,0 +1,4 @@
+@reboot sleep 5 && pwd
+@reboot ch
+@reboot sudo ./startupCronJob/resume-update-script.sh
+0 1 * * * sudo ./startupCronJob/resume-update-script.sh
