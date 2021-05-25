@@ -11,6 +11,8 @@ all - Just installs everything
 
 basic - a basic linux-buntu setup that will set you up with what you need
 
+apps - installs some basic apps you need for software development
+
 dev-machine - installs programs for a dev machine I might be working on,
 (please note that some programs will still need additional setup)
 
