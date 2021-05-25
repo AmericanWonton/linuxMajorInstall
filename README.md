@@ -20,3 +20,6 @@ Also, Git LFS Needs an executable
 git lfs isn't working either...
 
 Might want to run this binary as sudo, just so the program dosen't have to keep asking permission
+
+# For the scripting session:
+Please see the notes here if you have any questions on how it's built: https://www.shellscript.sh/
