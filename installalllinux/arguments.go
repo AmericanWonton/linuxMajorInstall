@@ -88,6 +88,43 @@ func fillBasic() {
 	theCommands = nil
 }
 
+func installApps() {
+	/* Update and upgrade */
+	theCommands = append(theCommands, "sudo", "apt-get", "update", "-y")
+	allPackageCommands = append(allPackageCommands, theCommands)
+	theCommands = nil
+	theCommands = append(theCommands, "sudo", "apt-get", "upgrade", "-y")
+	allPackageCommands = append(allPackageCommands, theCommands)
+	theCommands = nil
+	/* Google Chrome */
+	theCommands = append(theCommands, "wget", "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb")
+	allPackageCommands = append(allPackageCommands, theCommands)
+	theCommands = nil
+	theCommands = append(theCommands, "sudo", "apt", "install", "./google-chrome-stable_current_amd64.deb")
+	allPackageCommands = append(allPackageCommands, theCommands)
+	theCommands = nil
+	/* discord */
+	theCommands = append(theCommands, "sudo", "snap", "install", "discord")
+	allPackageCommands = append(allPackageCommands, theCommands)
+	theCommands = nil
+	/* Install VS Code */
+	theCommands = append(theCommands, "sudo", "snap", "install", "--classic", "code")
+	allPackageCommands = append(allPackageCommands, theCommands)
+	theCommands = nil
+	/* inkscape */
+	theCommands = append(theCommands, "sudo", "apt-get", "install", "inkscape")
+	allPackageCommands = append(allPackageCommands, theCommands)
+	theCommands = nil
+	/* notepad++ */
+	theCommands = append(theCommands, "sudo", "snap", "install", "notepad-plus-plus")
+	allPackageCommands = append(allPackageCommands, theCommands)
+	theCommands = nil
+	/* blender */
+	theCommands = append(theCommands, "sudo", "snap", "install", "blender", "--classic")
+	allPackageCommands = append(allPackageCommands, theCommands)
+	theCommands = nil
+}
+
 func fillDevMachine() {
 	/* Installing Docker */
 	/* Start at home directory */
