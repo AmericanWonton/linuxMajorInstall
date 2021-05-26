@@ -161,17 +161,22 @@ func fillDevMachine() {
 	theCommands = append(theCommands, "sudo", "apt", "install", "docker-ce")
 	allPackageCommands = append(allPackageCommands, theCommands)
 	theCommands = nil
+	/* Install Java JDK...MIGHT BE BEST TO USE BREW */
+
 	/* Have a Docker User created at some point */
 
-	/* Install Golang */
+	/* Install Golang (NOT USED, DO THIS WITH BREW) */
 	/* Start at home directory */
-	theCommands = append(theCommands, "cd")
-	allPackageCommands = append(allPackageCommands, theCommands)
-	theCommands = nil
-	theCommands = append(theCommands, "sudo", "apt", "install", "golang-go", "-y")
-	allPackageCommands = append(allPackageCommands, theCommands)
-	theCommands = nil
+	/*
+		theCommands = append(theCommands, "cd")
+		allPackageCommands = append(allPackageCommands, theCommands)
+		theCommands = nil
+		theCommands = append(theCommands, "sudo", "apt", "install", "golang-go", "-y")
+		allPackageCommands = append(allPackageCommands, theCommands)
+		theCommands = nil
+	*/
 	/* make go working directory */
+	/* NOT USED, DO THIS WITH BREW
 	theCommands = append(theCommands, "cd", "go")
 	allPackageCommands = append(allPackageCommands, theCommands)
 	theCommands = nil
@@ -187,4 +192,5 @@ func fillDevMachine() {
 	theCommands = append(theCommands, "cd")
 	allPackageCommands = append(allPackageCommands, theCommands)
 	theCommands = nil
+	*/
 }
