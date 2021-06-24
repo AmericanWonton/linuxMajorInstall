@@ -179,7 +179,7 @@ func commandExecute(packgeCommands [][]string) (bool, []string) {
 		fmt.Printf("DEBUG: restofCommands = %v\n", restOfCommands)
 		_, err := exec.Command(commandFirstWord, restOfCommands...).Output()
 		if err != nil {
-			errorComp := "Errored during the following installation:\n"
+			errorComp := "Errored during the following installation: \n" + commandFirstWord + " "
 			for z := 0; z < len(restOfCommands); z++ {
 				errorComp = errorComp + " " + restOfCommands[z]
 			}
