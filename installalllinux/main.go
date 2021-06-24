@@ -175,7 +175,7 @@ func commandExecute(packgeCommands [][]string) (bool, []string) {
 	for x := 0; x < len(packgeCommands); x++ {
 		fmt.Printf("DEBUG: Nubmered Roundabout roundabout: %v\n", x)
 		commandFirstWord := packgeCommands[x][0] //Insert first package command into argument
-		restOfCommands := packgeCommands[x][1:]
+		restOfCommands := packgeCommands[x][1:]  //Take out the initial argument to pass in the rest
 		fmt.Printf("DEBUG: restofCommands = %v\n", restOfCommands)
 		_, err := exec.Command(commandFirstWord, restOfCommands...).Output()
 		if err != nil {
