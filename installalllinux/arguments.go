@@ -94,6 +94,14 @@ func fillBasic() {
 	theCommands = append(theCommands, "sudo", "gdebi", "GitHubDesktop-linux-2.6.3-linux1.deb")
 	allPackageCommands = append(allPackageCommands, theCommands)
 	theCommands = nil
+	/* Install rpm */
+	theCommands = append(theCommands, "sudo", "apt-get", "install", "rpm", "-y")
+	allPackageCommands = append(allPackageCommands, theCommands)
+	theCommands = nil
+	/* Install alien */
+	theCommands = append(theCommands, "sudo", "apt-get", "install", "alien", "-y")
+	allPackageCommands = append(allPackageCommands, theCommands)
+	theCommands = nil
 }
 
 func installApps() {
