@@ -49,39 +49,25 @@ func fillBasic() {
 	theCommands = append(theCommands, "sudo", "apt-get", "install", "xrdp", "-y")
 	allPackageCommands = append(allPackageCommands, theCommands)
 	theCommands = nil
-	/* install brew
-	Note, this cannot run as root; might need to be determined that this runs manually */
-	/*
-		theCommands = append(theCommands, "/bin/bash", "-c", "\"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"", "-y")
-		allPackageCommands = append(allPackageCommands, theCommands)
-		theCommands = nil
-		theCommands = append(theCommands, "echo", "'eval \"$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)\"'", ">>", "/home/joek/.profile")
-		allPackageCommands = append(allPackageCommands, theCommands)
-		theCommands = nil
-		theCommands = append(theCommands, "eval", "\"$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)\"")
-		allPackageCommands = append(allPackageCommands, theCommands)
-		theCommands = nil
-	*/
-	/* update for final section of brew */
+	/* Build essential */
+	theCommands = append(theCommands, "sudo", "apt-get", "install", "build-essential", "-y")
+	allPackageCommands = append(allPackageCommands, theCommands)
+	theCommands = nil
+	/* install pvscan */
+	theCommands = append(theCommands, "sudo", "apt-get", "install", "lvm2", "-y")
+	allPackageCommands = append(allPackageCommands, theCommands)
+	theCommands = nil
+	/* Need update for below programs */
 	theCommands = append(theCommands, "sudo", "apt-get", "update", "-y")
 	allPackageCommands = append(allPackageCommands, theCommands)
 	theCommands = nil
 	theCommands = append(theCommands, "sudo", "apt-get", "upgrade", "-y")
 	allPackageCommands = append(allPackageCommands, theCommands)
 	theCommands = nil
-	theCommands = append(theCommands, "sudo", "apt-get", "install", "build-essential", "-y")
-	allPackageCommands = append(allPackageCommands, theCommands)
-	theCommands = nil
-	/* install git/github desktop core */
+	/* Git Desktop Core */
 	theCommands = append(theCommands, "sudo", "apt", "install", "git-all", "-y")
 	allPackageCommands = append(allPackageCommands, theCommands)
 	theCommands = nil
-	/* Can't do git lfs for some reason...
-	theCommands = append(theCommands, "sudo", "curl", "-s", "https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh",
-		"|", "sudo", "bash")
-	allPackageCommands = append(allPackageCommands, theCommands)
-	theCommands = nil
-	*/
 	theCommands = append(theCommands, "sudo", "apt", "install", "git-review", "-y")
 	allPackageCommands = append(allPackageCommands, theCommands)
 	theCommands = nil
