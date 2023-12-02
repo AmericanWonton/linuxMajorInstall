@@ -105,6 +105,24 @@ func executeLinuxCommands(theArg string) {
 			logWriter(result)
 		}
 		break
+	case "new_server":
+		//Basic Ubuntu Linux Server Setup
+		fmt.Printf("DEBUG: Running basic linux setup for this new server...\n")
+		fillnewServer()
+		goodUpdate, theResult := commandExecute(allPackageCommands)
+		if !goodUpdate {
+			bigResult := ""
+			for j := 0; j < len(theResult); j++ {
+				bigResult = bigResult + theResult[j] + "\n"
+			}
+			logWriter(bigResult)
+		} else {
+			theTimeNow := time.Now()
+			result := "This ran succesffully on " + theTimeNow.Format("2006-01-02 15:04:05")
+			fmt.Println(result)
+			logWriter(result)
+		}
+		break
 	case "basic":
 		//Basic Linux Setup
 		fmt.Printf("DEBUG: Running basic linux setup\n")
