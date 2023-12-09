@@ -184,32 +184,6 @@ func fillBasic() {
 	theCommands = append(theCommands, "echo", "\"export PATH=$PATH:$GOROOT/bin:$GOPATH/bin\"", ">>", "~/.bashrc")
 	allPackageCommands = append(allPackageCommands, theCommands)
 	theCommands = nil
-	/* Install Docker */
-	theCommands = append(theCommands, "cd")
-	allPackageCommands = append(allPackageCommands, theCommands)
-	theCommands = nil
-	theCommands = append(theCommands, "sudo", "apt", "update", "-y")
-	allPackageCommands = append(allPackageCommands, theCommands)
-	theCommands = nil
-	theCommands = append(theCommands, "sudo", "apt", "install", "apt-transport-https", "ca-certificates", "curl", "software-properties-common")
-	allPackageCommands = append(allPackageCommands, theCommands)
-	theCommands = nil
-	theCommands = append(theCommands, "curl", "-fsSL", "https://download.docker.com/linux/ubuntu/gpg",
-		"|", "sudo", "apt-key", "add", "-")
-	allPackageCommands = append(allPackageCommands, theCommands)
-	theCommands = nil
-	theCommands = append(theCommands, "sudo", "add-apt-repository", "\"deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable\"")
-	allPackageCommands = append(allPackageCommands, theCommands)
-	theCommands = nil
-	theCommands = append(theCommands, "sudo", "apt", "update")
-	allPackageCommands = append(allPackageCommands, theCommands)
-	theCommands = nil
-	theCommands = append(theCommands, "apt-cache", "policy", "docker-ce")
-	allPackageCommands = append(allPackageCommands, theCommands)
-	theCommands = nil
-	theCommands = append(theCommands, "sudo", "apt", "install", "docker-ce")
-	allPackageCommands = append(allPackageCommands, theCommands)
-	theCommands = nil
 }
 
 func fillnewServer() {
