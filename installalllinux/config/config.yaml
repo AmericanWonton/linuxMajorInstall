@@ -1,0 +1,22 @@
+---
+#Company ABC Config
+testhelloworld: "echo \"hello world!\""
+aptgetupdate: "sudo apt-get update -y"
+company:
+  address: 123 new city
+  datacenters:
+    CA:
+      North: 'San Francisco'
+      South: 'San Diego'
+      East:
+    OH:
+      West: 'Cincinati'
+      East: 'Cleveland'
+  phone:
+    # memo: need to change US number to new area code
+    US: '1-800-222-3333'
+    EU: '2-1234-3433-33444'
+topic:
+  subtopic: Testing Topic
+  stuff: 'Testing Stuff'
+  directory: '/product/app_code/smdh_uat/m2/smdh_pega/scripts/xml/PEGA'

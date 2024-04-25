@@ -3,3 +3,4 @@ biglinuxstartupcommands/logging/biglinuxstartup.txt
 installalllinux/GitHubDesktop-linux-2.6.3-linux1.deb
 installalllinux/logging/installlinux.txt
 installalllinux/installallbinary
+installalllinux/logging/*

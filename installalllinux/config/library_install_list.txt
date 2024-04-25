@@ -1,0 +1,23 @@
+echo "hello world!"
+sudo apt-get update -y
+sudo apt-get upgrade -y
+apt-get install net-tools
+sudo apt install snapd -y
+sudo apt install curl -y
+sudo apt install binutils-for-build -y
+sudo apt-get install nautilus-admin -y
+sudo snap install leafpad
+sudo apt install gimp gimp-gmic -y
+sudo apt install lsof -y
+sudo apt install ufw -y
+sudo apt-get install xrdp -y
+sudo apt-get install build-essential -y
+sudo apt-get install lvm2 -y
+sudo apt-get update -y
+sudo apt-get upgrade -y
+sudo apt install git-all -y
+sudo apt install git-review -y
+sudo wget https://github.com/shiftkey/desktop/releases/download/release-2.6.3-linux1/GitHubDesktop-linux-2.6.3-linux1.deb
+sudo gdebi GitHubDesktop-linux-2.6.3-linux1.deb
+sudo apt-get install rpm -y
+sudo apt-get install alien -y
