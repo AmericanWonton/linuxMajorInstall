@@ -24,6 +24,8 @@ ssh -i /d/goworkspace/src/superUltimateDBWebApp/security/fileServerKeyPair.pem u
 
 Currently Using: 
 ssh -i /d/goworkspace/src/superUltimateDBWebApp/superUltimateDBWebApp/project/security/superdbkeypair.pem ubuntu@ec2-3-129-13-253.us-east-2.compute.amazonaws.com
+also use:
+scp /home/joek2/go-workspace/src/linuxInstall/linuxMajorInstall/installalllinux/installallbinary root@164.92.127.223:/root/startUpCronJob/
 
 CronJob Setup:
 https://www.youtube.com/watch?v=QZJ1drMQz1A&list=PLdtk3tNgu15T4Y47Y9d-gbesIHN5ahGWm&index=13&t=533s
