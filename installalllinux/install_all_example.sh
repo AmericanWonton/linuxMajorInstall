@@ -8,14 +8,14 @@
 DLF_LOAD_DTTM=$(date '+%Y-%m-%d_%H-%m-%S')
 
 #File location:
-file_location="./logging"
+file_location="/root/startUpCronJob/logging"
 file_name="installlinux_${DLF_LOAD_DTTM}.log"
 
 #This is the log file location:
 LOG_FILE="${file_location}/${file_name}"
 
 #Has a list of all the software/libraries we will install
-library_install_list="./config/library_install_list.txt"
+library_install_list="/root/startUpCronJob/config/library_install_list.txt"
 
 #Get listed tables in config to perform table truncate upon
 installArray=()
@@ -36,8 +36,6 @@ do
 
     #Verifies if a paramater exists
     current_job_param=${i}
-    #Assign the generic file directory
-    generic_file="./config/basic_config.txt"
 
     echo "Running this example command: ${current_job_param}" | tee -a $LOG_FILE
 
@@ -50,6 +48,8 @@ do
         exit 1
     fi
 done
+
+
 
 
 
